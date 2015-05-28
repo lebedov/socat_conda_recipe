@@ -1,0 +1,29 @@
+{% set build = 0 %}
+{% set pkgversion = "2.0.0_b8" %}
+{% set version = "2.0.0-b8" %}
+
+package:
+    name: socat
+    version: {{pkgversion}}
+
+about:
+    home: http://www.dest-unreach.org/socat/
+    license: GPLv2
+    summary: Multipurpose relay for bidirectional data transfer.
+
+source:
+    fn: socat-{{version}}.tar.bz2
+    url: http://www.dest-unreach.org/socat/download/socat-{{version}}.tar.bz2
+    md5: ff56576703dfdeac221357a348c30760
+
+requirements:
+    build:
+        - ncurses >=5.9
+        - openssl
+        - readline
+    run:
+        - ncurses >=5.9
+        - openssl
+        - readline
+build:
+    number: {{build}}
